@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :documents
   resources :reward
   resources :bets
+  resources :contact_us
+  resources :about_us
+  resources :faq
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',

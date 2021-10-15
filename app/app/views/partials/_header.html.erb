@@ -1,20 +1,27 @@
 <div class="container">
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+  <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
     <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
       <%= image_tag 'reward-logo.png', style: 'width: 35px;margin-right: 10px;' %>
       <span class="fs-4">QR Leilões</span>
     </a>
-
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">Sobre Nós</a></li>
+      <li class="nav-item">
+        <%= link_to 'Home', root_path, class: "nav-link active", 'aria-current': "page" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Contato', contact_us_path, class: "nav-link text-muted", 'aria-current': "page" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'FAQs', root_path, class: "nav-link text-muted", 'aria-current': "page" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Sobre Nós', about_us_path, class: "nav-link text-muted", 'aria-current': "page" %>
+      </li>
       <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to 'Minha Conta', my_account_index_path, class: "nav-link" %></li>
-        <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+        <li class="nav-item"><%= link_to 'Minha Conta', my_account_index_path, class: "nav-link text-muted" %></li>
+        <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, class: "nav-link text-muted", method: :delete %></li>
       <% else %>
-        <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class: "nav-link text-muted" %></li>
       <% end %>
     </ul>
   </header>

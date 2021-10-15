@@ -1,4 +1,5 @@
 <%= render partial: 'partials/header' %>
+<%= render partial: 'partials/carousel' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
@@ -13,55 +14,53 @@
     <div class="col-lg-9">
       <div class="card">
         <div class="card-body">
-          <fieldset>
-            <legend>Dados cadastrais</legend>
-            <div class="row">
-              <div class="col-lg-6">
-                <div>
-                  <label>Status:</label>
-                  <span>Ativo</span>
-                </div>
-                <div>
-                  <label>Nome:</label>
-                  <span><%= current_user.first_name %></span>
-                </div>
-                <div>
-                  <label>Email:</label>
-                  <span><%= current_user.email %></span>
-                </div>
-                <div>
-                  <label>CPF:</label>
-                  <span><%= current_user.created_at %></span>
-                </div>
-                <div>
-                  <label>RG:</label>
-                  <span><%= current_user.updated_at %></span>
-                </div>
+          <h5 class="card-title">Dados cadastrais</h5>
+          <div class="row">
+            <div class="col-lg-6">
+              <div>
+                <label>Status:</label>
+                <span>Ativo</span>
               </div>
-              <div class="col-lg-6">
-                <div>
-                  <label>Nasc:</label>
-                  <span><%= current_user.birth_date %></span>
-                </div>
-                <div>
-                  <label>Sexo:</label>
-                  <span><%= current_user.gender %></span>
-                </div>
-                <div>
-                  <label>Telefone:</label>
-                  <span><%= current_user.phone_number %></span>
-                </div>
-                <div>
-                  <label>Celular:</label>
-                  <span><%= current_user.personal_number %></span>
-                </div>
-                <div>
-                  <label>Endereço:</label>
-                  <span><%= current_user.street_address %></span>
-                </div>
+              <div>
+                <label>Nome:</label>
+                <span><%= current_user.first_name %></span>
+              </div>
+              <div>
+                <label>Email:</label>
+                <span><%= current_user.email %></span>
+              </div>
+              <div>
+                <label>CPF:</label>
+                <span><%= current_user.created_at %></span>
+              </div>
+              <div>
+                <label>RG:</label>
+                <span><%= current_user.updated_at %></span>
               </div>
             </div>
-          </fieldset>
+            <div class="col-lg-6">
+              <div>
+                <label>Nasc:</label>
+                <span><%= current_user.birth_date %></span>
+              </div>
+              <div>
+                <label>Sexo:</label>
+                <span><%= current_user.gender %></span>
+              </div>
+              <div>
+                <label>Telefone:</label>
+                <span><%= current_user.phone_number %></span>
+              </div>
+              <div>
+                <label>Celular:</label>
+                <span><%= current_user.personal_number %></span>
+              </div>
+              <div>
+                <label>Endereço:</label>
+                <span><%= current_user.street_address %></span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

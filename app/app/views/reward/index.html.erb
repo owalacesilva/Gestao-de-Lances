@@ -1,4 +1,5 @@
 <%= render partial: 'partials/header' %>
+<%= render partial: 'partials/carousel' %>
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
@@ -13,7 +14,33 @@
     <div class="col-lg-9">
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          <h5 class="card-title">Meus Lotes Arrematados</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" width="20%">Data</th>
+                <th scope="col">Leilão</th>
+                <th scope="col">Lance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>15/10/2021</td>
+                <td>FORD RANGER 3,2 4X4 CD DIESEL - Bauru, SP</td>
+                <td>R$ 114.000,00</td>
+              </tr>
+              <tr>
+                <td>15/10/2021</td>
+                <td>HONDA CIVIC 2.0 16V ONE EX FLEX - Bauru, SP</td>
+                <td>R$ 114.000,00</td>
+              </tr>
+              <tr>
+                <td>15/10/2021</td>
+                <td>FORD RANGER 3,2 4X4 CD DIESEL - Bauru, SP</td>
+                <td>R$ 114.000,00</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
