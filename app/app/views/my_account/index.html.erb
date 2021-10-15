@@ -2,21 +2,69 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <ul class="list-group">
+      <div class="list-group">
         <%= link_to 'Meu Cadastro', my_account_index_path, class: "list-group-item list-group-item-action active" %>
-        <%= link_to 'Meus Documentos', documents_index_path, class: "list-group-item list-group-item-action" %>
+        <%= link_to 'Meus Documentos', documents_path, class: "list-group-item list-group-item-action" %>
         <%= link_to 'Meus Lotes Arrematados', reward_index_path, class: "list-group-item list-group-item-action" %>
-        <%= link_to 'Meus Lances', bets_index_path, class: "list-group-item list-group-item-action" %>
+        <%= link_to 'Meus Lances', bets_path, class: "list-group-item list-group-item-action" %>
         <%= link_to "Sair", destroy_user_session_path, class: "list-group-item list-group-item-action", method: :delete %>
-      </ul>
-    <div>
+      </div>
+    </div>
     <div class="col-lg-9">
       <div class="card">
         <div class="card-body">
-          This is some text within a card body.
+          <fieldset>
+            <legend>Dados cadastrais</legend>
+            <div class="row">
+              <div class="col-lg-6">
+                <div>
+                  <label>Status:</label>
+                  <span>Ativo</span>
+                </div>
+                <div>
+                  <label>Nome:</label>
+                  <span><%= current_user.first_name %></span>
+                </div>
+                <div>
+                  <label>Email:</label>
+                  <span><%= current_user.email %></span>
+                </div>
+                <div>
+                  <label>CPF:</label>
+                  <span><%= current_user.created_at %></span>
+                </div>
+                <div>
+                  <label>RG:</label>
+                  <span><%= current_user.updated_at %></span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div>
+                  <label>Nasc:</label>
+                  <span><%= current_user.birth_date %></span>
+                </div>
+                <div>
+                  <label>Sexo:</label>
+                  <span><%= current_user.gender %></span>
+                </div>
+                <div>
+                  <label>Telefone:</label>
+                  <span><%= current_user.phone_number %></span>
+                </div>
+                <div>
+                  <label>Celular:</label>
+                  <span><%= current_user.personal_number %></span>
+                </div>
+                <div>
+                  <label>Endereço:</label>
+                  <span><%= current_user.street_address %></span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
         </div>
       </div>
-    <div>
-  <div>
-<div>
+    </div>
+  </div>
+</div>
 <%= render partial: 'partials/footer' %>
