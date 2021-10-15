@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'bets/index'
+  get 'reward/index'
+  get 'documents/index'
+  get 'documents/new'
+  get 'documents/show'
+  get 'documents/edit'
+  get 'documents/udpate'
+  get 'documents/destroy'
   root 'home#index'
 
   resources :my_account
