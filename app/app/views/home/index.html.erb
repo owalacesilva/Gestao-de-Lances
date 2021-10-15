@@ -1,3 +1,81 @@
 <%= render partial: 'partials/header' %>
 <%= render partial: 'partials/carousel' %>
+<style>
+.m0l {
+  margin: 30px;
+}
+
+.title-container {
+  overflow: hidden;
+  border-bottom: 1px solid #e0000a;
+  margin: 50px 0 25px;
+}
+
+.title-container .lo-title-destaque {
+  display: table;
+  padding: 5px 15px 3px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #e0000a;
+  font-weight: 400;
+  font-size: 16px;
+  position: relative;
+  margin: 0;
+}
+.title-container .lo-title-destaque:before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 0;
+  bottom: 0;
+  width: 21px;
+  height: 100%;
+  background: #e0000a;
+  transform: skew(28deg);
+}
+.title-container .lo-title-destaque:after {
+  content: '';
+  position: absolute;
+  right: -23px;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  height: 100%;
+  background: #e0000a;
+  transform: skew(28deg);
+}
+</style>
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="EX: BMW" aria-label="EX: BMW">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+  <div class="title-container m0l">
+    <h2 class="lo-title-destaque">Leilões em destaques</h2>
+  </div>
+  <div class="row">
+    <% (0..39).each do |index| %>
+      <div class="col-lg-3">
+        <div class="card mb-5" style="width: 18rem;">
+          <%= image_tag "car-test.jpg", class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-title">CHEVROLET S-10 2.8 HIGH COUNTRY 4X4 CD 16V TURBO DIESEL - Bauru, SP</p>
+            <p class="card-text"></p>
+            <div class="text-center">
+              <small>Lance atual</small>
+              <h4>R$ 100.500,00</h4>
+            </div>
+            <div class="text-center">
+              <a href="#" class="btn btn-primary btn-block">Dar lance</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%- end %>
+  </div>
+</div>
 <%= render partial: 'partials/footer' %>
