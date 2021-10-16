@@ -6,7 +6,7 @@
     </a>
     <ul class="nav nav-pills">
       <li class="nav-item">
-        <%= link_to 'Home', root_path, class: "nav-link active", 'aria-current': "page" %>
+        <%= link_to 'Home', root_path, class: "nav-link text-muted", 'aria-current': "page" %>
       </li>
       <li class="nav-item">
         <%= link_to 'Contato', contact_us_path, class: "nav-link text-muted", 'aria-current': "page" %>
@@ -22,6 +22,7 @@
         <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, class: "nav-link text-muted", method: :delete %></li>
       <% else %>
         <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class: "nav-link text-muted" %></li>
+        <li class="nav-item"><%= link_to "Cadastre-se", new_user_registration_path, class: "nav-link active" %></li>
       <% end %>
     </ul>
   </header>

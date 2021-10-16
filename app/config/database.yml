@@ -14,7 +14,7 @@ development:
   host: db
   username: root
   password: 123456
-  database: sis_awards
+  database: sis_rewards
 
 
 # Warning: The database defined as "test" will be erased and
@@ -25,11 +25,11 @@ test:
   host: db
   username: root
   password: 123456
-  database: sis_awards
+  database: sis_rewards
 
 production:
   <<: *default
   host: db
   username: root
   password: 123456
-  database: sis_awards
+  database: sis_rewards

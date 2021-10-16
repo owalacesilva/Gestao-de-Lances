@@ -39,6 +39,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :status
       t.string :first_name
       t.string :last_name
+      t.string :rg_number, null: true
+      t.string :cpf_number, null: true
+      t.string :razao_social, null: true
+      t.string :cnpj_number, null: true
       t.string :gender
       t.date :birth_date
       t.string :phone_number

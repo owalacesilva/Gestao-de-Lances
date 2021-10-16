@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_10_15_020408) do
 
-  create_table "admins", charset: "utf8mb4", force: :cascade do |t|
+  create_table "admins", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_10_15_020408) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "status"
     t.string "display_name"
     t.string "phone_number"
     t.index ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
@@ -41,7 +42,7 @@ ActiveRecord::Schema.define(version: 2021_10_15_020408) do
     t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
   end
 
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
+  create_table "users", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -62,8 +63,13 @@ ActiveRecord::Schema.define(version: 2021_10_15_020408) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "status"
     t.string "first_name"
     t.string "last_name"
+    t.string "rg_number"
+    t.string "cpf_number"
+    t.string "razao_social"
+    t.string "cnpj_number"
     t.string "gender"
     t.date "birth_date"
     t.string "phone_number"
