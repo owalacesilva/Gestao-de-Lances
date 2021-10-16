@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :contact_us
   resources :about_us
   resources :faq
+  resources :auction_page, path: :auction
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',

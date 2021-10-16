@@ -58,19 +58,28 @@
     <h2 class="lo-title-destaque">Leilões em destaques</h2>
   </div>
   <div class="row">
-    <% (0..39).each do |index| %>
+    <% (1..10).each do |index| %>
       <div class="col-lg-3">
         <div class="card mb-5" style="width: 18rem;">
-          <%= image_tag "car-test.jpg", class: "card-img-top" %>
+          <div class="date py-2 text-center">
+            <h5>Data do leilão</h5>
+            <span>25/12/2021</span>
+          </div>
+          <%= link_to auction_page_path(index) do %>
+            <%= image_tag "car-test.jpg", class: "card-img-top" %>
+          <%- end %>
           <div class="card-body">
-            <p class="card-title">CHEVROLET S-10 2.8 HIGH COUNTRY 4X4 CD 16V TURBO DIESEL - Bauru, SP</p>
+            <div class="text-center border-bottom border-3">LOTE <%= index %></div>
+            <p class="card-title">
+              <%= link_to "CHEVROLET S-10 2.8 HIGH COUNTRY 4X4 CD 16V TURBO DIESEL - Bauru, SP", auction_page_path(index) %>
+            </p>
             <p class="card-text"></p>
             <div class="text-center">
               <small>Lance atual</small>
               <h4>R$ 100.500,00</h4>
             </div>
-            <div class="text-center">
-              <a href="#" class="btn btn-primary btn-block">Dar lance</a>
+            <div class="d-grid gap-2">
+              <%= link_to 'Dar lance', auction_page_path(index), class: "btn btn-primary" %>
             </div>
           </div>
         </div>
