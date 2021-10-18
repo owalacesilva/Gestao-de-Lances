@@ -24,8 +24,6 @@ services:
     volumes:
       - bundle:/usr/local/bundle
       - .:/workspace:cached
-      - .docker/.irbrc:/home/workspace/.irbrc:ro
-      - .docker/.pryrc:/home/workspace/.pryrc:ro
     environment:
       - RAILS_ENV=development
       - WEB_CONCURRENCY=1
