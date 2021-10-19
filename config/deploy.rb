@@ -4,7 +4,7 @@ lock "~> 3.10.2"
 set :application, "rails-rewards"
 
 # Default deploy_to directory
-set :deploy_to, "/root/#{fetch(:application)}/app  "
+set :deploy_to, "/home/ubuntu/#{fetch(:application)}"
 
 # Configuration Bitbucket Repository URL
 set :repo_url, "git@github.com:w2silva/rails-rewards.git"
@@ -147,7 +147,7 @@ set :delayed_job_roles, [:background]
 # set :delayed_job_daemon_opts, ["no_wait", "shush"]
 
 if Rake::Task.task_defined?("deploy:published")
-  after "deploy:published", "delayed_job:default"
+  #after "deploy:published", "delayed_job:default"
 end
 
 namespace :deploy do
@@ -161,5 +161,5 @@ namespace :deploy do
     end
   end
 
-  after :finishing, "deploy:update_cron"
+  #after :finishing, "deploy:update_cron"
 end

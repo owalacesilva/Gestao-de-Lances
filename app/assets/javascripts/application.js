@@ -1,5 +1,8 @@
-$(function() {
-  $('.yourCountdownContainer').countdown({
-      date: "June 7, 2087 15:03:26"
-  });
+//= require jquery3
+//= require popper
+//= require bootstrap
+//= require_tree .
+
+jQuery(function() {
+  jQuery('#modalAlertAntifraud').modal('show');
 });
