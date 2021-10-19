@@ -1,34 +1,44 @@
-<div style="background-image: linear-gradient(to bottom, #b80d0d, #3e0000);border-top:5px solid #525252;">
-  <div class="container">
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Quem Somos</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Termos de uso</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pergunstas Frequentes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Políticas de Privacidade</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Termos de Responsabilidade</a></li>
+<div class="text-center mt-5 mb-3">
+  <%= image_tag 'sl.jpg' %>
+</div>
+<div id="footer">
+  <footer class="py-3">
+    <div class="container">
+      <ul class="nav justify-content-center border-bottom mb-3">
+        <li class="nav-item">
+          <%= link_to 'Quem Somos', about_us_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Termos de uso</a></li>
+        <li class="nav-item">
+          <%= link_to 'Pergunstas Frequentes', faq_index_path, class: "nav-link", 'aria-current': "page" %>
+        </li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Políticas de Privacidade</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2">Termos de Responsabilidade</a></li>
       </ul>
       <div class="row">
         <div class="col-lg-6">
           <div class="px-3">
             <h5>QR Leilões</h5>
             <ul class="list-unstyled">
-              <li>(11) 4211 4839 Fixo/li>
-              <li>(11) 4211 4839 Whatsapp</li>
-              <li>(11) 4211 4839 Whatsapp</li>
-              <li>Email: Atendimento@qrleiloes.com</li>
-              <li>Rodovia Marechal Rondon , Km 338</li>
-              <li>Vl Aviação, Bauru, Sp - , 170447-900, Brasil</li>
+              <li>(11) 4211 0000 Fixo</li>
+              <li>(11) 4211 0000 Whatsapp</li>
+              <li>(11) 4211 0000 Whatsapp</li>
+              <li>Email: atendimento@qrleiloes.com</li>
+              <li>Av Paulista</li>
+              <li>Centro, São Paulo, Sp - , 08996-900, Brasil</li>
             </ul>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="px-3">
-            <a href="https://www.google.com/maps/place/Albany,+NY/"><img src="https://maps.googleapis.com/maps/api/staticmap?center=Albany,+NY&zoom=13&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true" alt="Google Map of Albany, NY"></a>
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="512" height="240" id="gmap_canvas" src="https://maps.google.com/maps?q=av%20paulista%201000&t=k&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><style>.mapouter{position:relative;text-align:right;height:240px;width:512px;}</style><a href="https://www.embedgooglemap.net">google maps embed link</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:240px;width:512px;}</style></div></div>
           </div>
         </div>
       </div>
-      <p class="text-center text-muted">© Qr Leiloes - Todos os direitos reservados. Proibido a reprodução total ou parcial do layout, seleção, organização e disposição do conteúdo audiovisual deste software nos termos da Lei n. º 9.609/98 e 9.610/98.</p>
-    </footer>
-  </div>
+      <div class="text-center pt-4">
+        <%= image_tag 'cs.png' %>
+      </div>
+      <div class="disclaimer">© Qr Leiloes - Todos os direitos reservados. Proibido a reprodução total ou parcial do layout, seleção, organização e disposição do conteúdo audiovisual deste software nos termos da Lei n. º 9.609/98 e 9.610/98.</div>
+    </div>
+  </footer>
 </div>
