@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_15_020408) do
+ActiveRecord::Schema.define(version: 2021_10_19_173631) do
 
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -40,6 +40,33 @@ ActiveRecord::Schema.define(version: 2021_10_15_020408) do
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_admins_on_unlock_token", unique: true
+  end
+
+  create_table "auctions", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "admin_id", null: false
+    t.bigint "user_id"
+    t.boolean "blocked", default: false, null: false
+    t.date "blocked_at"
+    t.string "status", null: false
+    t.string "title", null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
+    t.decimal "opening_bid", precision: 10, null: false
+    t.string "modality"
+    t.text "description"
+    t.text "important_notices"
+    t.string "postal_code"
+    t.string "street_address"
+    t.string "street_number"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.integer "views_count", default: 0, null: false
+    t.index ["admin_id"], name: "index_auctions_on_admin_id"
+    t.index ["user_id"], name: "index_auctions_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -87,4 +114,6 @@ ActiveRecord::Schema.define(version: 2021_10_15_020408) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "auctions", "admins", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "auctions", "users", on_update: :cascade
 end

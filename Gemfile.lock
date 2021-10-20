@@ -6,6 +6,23 @@ GIT
     puma (5.5.2)
       nio4r (~> 2.0)
 
+GIT
+  remote: https://github.com/stympy/faker
+  revision: f160a89366404cfd8ac6ea7c45bb64c61c0dd74b
+  branch: master
+  specs:
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
+
+GIT
+  remote: https://github.com/thoughtbot/factory_bot_rails
+  revision: b149856be340f919a49bab8d4389050dce422cbc
+  branch: master
+  specs:
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -146,6 +163,8 @@ GEM
     e2mmap (0.1.0)
     erubi (1.10.0)
     execjs (2.8.1)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
     ffi (1.15.4)
     formatador (0.3.0)
     globalid (0.5.2)
@@ -442,6 +461,8 @@ DEPENDENCIES
   capybara (>= 3.26)
   database_cleaner-active_record
   devise
+  factory_bot_rails!
+  faker!
   guard-rspec
   jbuilder (~> 2.7)
   jquery-rails

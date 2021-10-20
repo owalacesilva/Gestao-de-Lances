@@ -80,7 +80,6 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem "database_cleaner-active_record"
   gem "mock_redis"
   gem "selenium-webdriver"
   gem "shoulda-matchers", require: false
@@ -89,8 +88,11 @@ group :test do
   gem "vcr", require: false
   gem "webdrivers", require: false
   gem "webmock"
+  
+  gem "database_cleaner-active_record"
+  gem "factory_bot_rails", git: "https://github.com/thoughtbot/factory_bot_rails", branch: "master"
+  gem "faker",             git: "https://github.com/stympy/faker",                 branch: "master"
   gem "rails-controller-testing"
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

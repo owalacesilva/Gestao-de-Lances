@@ -23,4 +23,13 @@ pt-BR:
         country: País
         password: Senha
         password_confirmation: Digite novamente a senha
+    errors:
+      messages:
+        record_invalid: Informações invalidas
+      models:
+        auction:
+          attributes:
+            admin:
+              required: Nenhum admin foi definido
+              blank: Campo admin está vazio
 
