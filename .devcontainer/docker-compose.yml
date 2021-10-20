@@ -22,6 +22,7 @@ services:
     volumes:
       - bundle:/usr/local/bundle
       - ..:/workspace:cached
+      - ~/.ssh:/home/vscode/.ssh
     environment:
       - RAILS_ENV=development
       - WEB_CONCURRENCY=1
