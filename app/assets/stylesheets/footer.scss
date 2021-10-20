@@ -1,5 +1,7 @@
+@import "variables";
+
 #footer {
-  background-image: linear-gradient(to bottom, #b80d0d, #3e0000);border-top:5px solid #525252;
+  background-color: $primary-color;
   color: white;
   font-size: 14px;
 

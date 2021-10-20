@@ -1,29 +1,68 @@
-<div class="container">
-  <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <%= image_tag 'reward-logo.png', style: 'width: 35px;margin-right: 10px;' %>
-      <span class="fs-4">Rails Auctions</span>
-    </a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <%= link_to 'Home', root_path, class: "nav-link text-muted", 'aria-current': "page" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Contato', contact_us_path, class: "nav-link text-muted", 'aria-current': "page" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'FAQs', faq_index_path, class: "nav-link text-muted", 'aria-current': "page" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to 'Sobre Nós', about_us_path, class: "nav-link text-muted", 'aria-current': "page" %>
-      </li>
-      <% if user_signed_in? %>
-        <li class="nav-item"><%= link_to 'Minha Conta', my_account_index_path, class: "nav-link text-muted" %></li>
-        <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, class: "nav-link text-muted", method: :delete %></li>
-      <% else %>
-        <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class: "nav-link text-muted" %></li>
-        <li class="nav-item"><%= link_to "Cadastre-se", new_user_registration_path, class: "nav-link active" %></li>
-      <% end %>
-    </ul>
-  </header>
+<div class="top-header">
+  <div class="d-flex flex-wrap justify-content-center">
+    <span>Leilões Online e Presenciais de Veículos, Imóveis, Materiais e Judiciais.</span>
+  </div>
+</div>
+<div class="header-menu">
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-between">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link" do %>
+            <%= fa_icon "camera-retro" %> Home
+          <%- end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to contact_us_path, class: "nav-link" do %>
+            <%= fa_icon "camera-retro" %> Contato
+          <%- end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to faq_index_path, class: "nav-link" do %>
+            <%= fa_icon "camera-retro" %> Como participar
+          <%- end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to about_us_path, class: "nav-link" do %>
+            <%= fa_icon "camera-retro" %> Sobre Nós
+          <%- end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to faq_index_path, class: "nav-link" do %>
+            <%= fa_icon "camera-retro" %> Perguntas Frequenstes
+          <%- end %>
+        </li>
+      </ul>
+      <ul class="nav nav-pills">
+        <% if user_signed_in? %>
+          <li class="nav-item"><%= link_to 'Minha Conta', my_account_index_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Sair", destroy_user_session_path, class: "nav-link", method: :delete %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to "Cadastre-se", new_user_registration_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Entrar", new_user_session_path, class: "nav-link" %></li>
+        <% end %>
+      </ul>
+    </header>
+  </div>
+</div>
+<div class="header-search">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="align-items-center">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+          <%= image_tag 'reward-logo.png', style: 'height: 70px;margin-right: 10px;' %>
+        </a>
+      </div>
+      <div class="d-flex">
+        <form>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Faça sua busca no site" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-secondary" type="button" id="button-addon2">
+              <%= fa_icon "camera-retro" %>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

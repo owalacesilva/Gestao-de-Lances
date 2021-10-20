@@ -1,92 +1,83 @@
-<%= render partial: 'partials/cookies' %>
 <%= render partial: 'partials/header' %>
 <%= render partial: 'partials/carousel' %>
 <%= render partial: 'partials/modal-alert' %>
-<style>
-.m0l {
-  margin: 30px;
-}
-
-.title-container {
-  overflow: hidden;
-  border-bottom: 1px solid #e0000a;
-  margin: 50px 0 25px;
-}
-
-.title-container .lo-title-destaque {
-  display: table;
-  padding: 5px 15px 3px;
-  text-transform: uppercase;
-  color: #fff;
-  background: #e0000a;
-  font-weight: 400;
-  font-size: 16px;
-  position: relative;
-  margin: 0;
-}
-.title-container .lo-title-destaque:before {
-  content: '';
-  position: absolute;
-  right: -10px;
-  top: 0;
-  bottom: 0;
-  width: 21px;
-  height: 100%;
-  background: #e0000a;
-  transform: skew(28deg);
-}
-.title-container .lo-title-destaque:after {
-  content: '';
-  position: absolute;
-  right: -23px;
-  top: 0;
-  bottom: 0;
-  width: 10px;
-  height: 100%;
-  background: #e0000a;
-  transform: skew(28deg);
-}
-</style>
 <div class="container">
-  <nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="EX: BMW" aria-label="EX: BMW">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
-      </form>
-    </div>
-  </nav>
-  <div class="title-container m0l">
-    <h2 class="lo-title-destaque">Leilões em destaques</h2>
-  </div>
   <div class="row">
-    <% (1..10).each do |index| %>
-      <div class="col-lg-3">
-        <div class="card mb-5" style="width: 18rem;">
-          <div class="date py-2 text-center">
-            <h5>Data do leilão</h5>
-            <span>25/12/2021</span>
-          </div>
-          <%= link_to auction_page_path(index) do %>
-            <%= image_tag "car-test.jpg", class: "card-img-top" %>
-          <%- end %>
-          <div class="card-body">
-            <div class="text-center border-bottom border-3">LOTE <%= index %></div>
-            <p class="card-title">
-              <%= link_to "CHEVROLET S-10 2.8 HIGH COUNTRY 4X4 CD 16V TURBO DIESEL - Bauru, SP", auction_page_path(index) %>
-            </p>
-            <p class="card-text"></p>
-            <div class="text-center">
-              <small>Lance atual</small>
-              <h4>R$ 100.500,00</h4>
-            </div>
-            <div class="d-grid gap-2">
-              <%= link_to 'Dar lance', auction_page_path(index), class: "btn btn-primary" %>
-            </div>
-          </div>
+    <div class="col-lg-3">
+      <div class="d-flex flex-wrap justify-content-center">
+        <div>Siga-nos:</div>
+        <ul class="list-unstyled">
+          <li><a href="http://instagram.com/sodresantoro" title="Siga no Instagram" target="_blank"><i class="icon-instagram icon-large"></i></a></li>
+          <!-- <li><a href="https://twitter.com/sodre_santoro" class="twitter" title="Siga no Twiiter" target="_blank"></a></li> -->
+          <li><a href="https://www.youtube.com/user/leilaosodresantoro" title="Siga no Youtube" target="_blank"><i class="icon-youtube icon-large"></i></a></li>
+          <li><a href="https://www.facebook.com/sodresantoro" title="Curta no Facebook" target="_blank"><i class="icon-facebook icon-large"></i></a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-title">Categorias</p>
+          <p>Leilão de Veículos</p>
+          <ul class="list-group">
+            <li class="list-group-item">Cominhões</li>
+            <li class="list-group-item">Carros</li>
+            <li class="list-group-item">Motos</li>
+            <li class="list-group-item">Utilitarios pessados</li>
+            <li class="list-group-item">Utilitarios leves</li>
+          </ul>
+          <p>Leilão de Materiais</p>
+          <ul class="list-group">
+            <li class="list-group-item">Diversos</li>
+            <li class="list-group-item">Eletrodomesticos</li>
+            <li class="list-group-item">Ferramentas</li>
+            <li class="list-group-item">Informática</li>
+            <li class="list-group-item">Móveis p/ casa</li>
+          </ul>
+          <p>Leilão de Imóveis</p>
+          <ul class="list-group">
+            <li class="list-group-item">Diversos</li>
+            <li class="list-group-item">Apartamento</li>
+            <li class="list-group-item">Imóvel</li>
+            <li class="list-group-item">Imóvel residencial</li>
+            <li class="list-group-item">Terreno</li>
+          </ul>
         </div>
       </div>
-    <%- end %>
+    </div>
+    <div class="col-lg-9">
+      <div class="title-container">
+        <h2 class="lo-title-destaque">próximos leilões</h2>
+      </div>
+      <div class="row">
+        <% (1..10).each do |index| %>
+          <div class="col-lg-4">
+            <div class="card mb-5">
+              <%= link_to auction_page_path(index) do %>
+                <%= image_tag "car-test.jpg", class: "card-img-top" %>
+              <%- end %>
+              <div class="card-body">
+                <div class="date py-2 text-center">
+                  <div>Data do leilão</div>
+                  <span>25/12/2021</span>
+                </div>
+                <div class="text-center border-bottom border-3">LOTE <%= index %></div>
+                <p class="card-title">
+                  <%= link_to "CHEVROLET S-10 2.8 HIGH COUNTRY 4X4 CD 16V TURBO DIESEL - Bauru, SP", auction_page_path(index) %>
+                </p>
+                <p class="card-text"></p>
+                <div class="text-center">
+                  <small>Lance atual</small>
+                  <h4>R$ 100.500,00</h4>
+                </div>
+                <div class="d-grid gap-2">
+                  <%= link_to 'Dar lance', auction_page_path(index), class: "btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%- end %>
+      </div>
+    </div>
   </div>
 </div>
 <%= render partial: 'partials/footer' %>
+<%= render partial: 'partials/cookies' %>

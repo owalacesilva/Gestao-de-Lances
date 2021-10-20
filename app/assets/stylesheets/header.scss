@@ -1,0 +1,29 @@
+@import "variables";
+
+.top-header {
+  background-color: $primary-color;
+  color: white;
+  font-size: .8em;
+  padding: 2px 0px;
+  text-transform: uppercase;
+}
+
+.header-menu {
+  background-color: #e7e7e7;
+
+  .nav {
+    .nav-link {
+      color: #004c6d;
+      font-size: .9em;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
+
+.header-search {
+  background-color: $primary-color;
+  color: white;
+  padding: 10px 0px;
+  margin: 0px 0px 20px 0px;
+}

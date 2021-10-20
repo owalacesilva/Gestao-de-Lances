@@ -1,5 +1,5 @@
 pt-BR:
-  app_name: Rails Auctions
+  app_name: SZORTYKA Online
   activerecord: 
     models:
       user: Usuário
