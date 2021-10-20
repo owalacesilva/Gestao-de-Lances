@@ -1,14 +1,11 @@
-ARG RUBY_VERSION
+# [Choice] Ruby version (use -bullseye variants on local arm64/Apple Silicon): 3, 3.0, 2, 2.7, 2.6, 3-bullseye, 3.0-bullseye, 2-bullseye, 2.7-bullseye, 2.6-bullseye, 3-buster, 3.0-buster, 2-buster, 2.7-buster, 2.6-buster
+ARG VARIANT=2.7.0
+ARG BUNDLER_VERSION
 
-FROM ruby:$RUBY_VERSION
+FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
 
 ENV APP_HOME="/workspace"
 ENV NODE_VERSION 12
-
-ARG PG_MAJOR
-ARG BUNDLER_VERSION
-ARG USER_ID
-ARG GROUP_ID
 
 RUN curl -sL https://deb.nodesource.com/setup_$NODE_VERSION.x | bash -
 
@@ -23,17 +20,8 @@ RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen
 RUN export LC_ALL="en_US.utf8"
 
-# Create a directory for the app code
-RUN mkdir -p "$APP_HOME" \
-  && chown -R $USER_ID:$GROUP_ID $APP_HOME \
-  && addgroup --gid $GROUP_ID honey \
-  && adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID honey
-
-USER $USER_ID
-
 # Upgrade RubyGems and install required Bundler version
-RUN gem update --system && \
-    gem install bundler:$BUNDLER_VERSION
+RUN gem install bundler
 
 # Send "ctrl-c"-like signal when stopping
 STOPSIGNAL SIGINT

@@ -5,15 +5,13 @@ services:
   app: &app
     build:
       context: .
-      dockerfile: ./.docker/Dockerfile
+      dockerfile: Dockerfile
       args:
-        RUBY_VERSION: '2.7.0'
+        VARIANT: '2.7'
+        NODE_VERSION: 'lts/*'
         PG_MAJOR: '12'
         BUNDLER_VERSION: '2.1.4'
-        USER_ID: ${COMPOSE_UID}
-        GROUP_ID: ${COMPOSE_GID}
-    image: jk-premios:1.0.0
-    user: honey:honey
+    image: rails-auctions:1.0.0
     tmpfs:
       - /tmp
 
@@ -23,7 +21,7 @@ services:
     tty: true
     volumes:
       - bundle:/usr/local/bundle
-      - .:/workspace:cached
+      - ..:/workspace:cached
     environment:
       - RAILS_ENV=development
       - WEB_CONCURRENCY=1

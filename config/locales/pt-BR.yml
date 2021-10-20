@@ -1,5 +1,5 @@
 pt-BR:
-  app_name: QR Leilões
+  app_name: Rails Auctions
   activerecord: 
     models:
       user: Usuário
