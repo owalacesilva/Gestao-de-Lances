@@ -24,7 +24,6 @@ jobs:
           rubocop_version: 1.12
           rubocop_extensions: rubocop-performance:1.10 rubocop-rails:2.9 rubocop-rspec:2.2
           github_token: ${{ secrets.github_token }}
-          vercel_token: ${{ secrets.vercel_token }}
           reporter: github-pr-review
           rubocop_flags: "-c .rubocop.yml"
   brakeman:
@@ -38,5 +37,4 @@ jobs:
         uses: reviewdog/action-brakeman@v1
         with:
           github_token: ${{ secrets.github_token }}
-          vercel_token: ${{ secrets.vercel_token }}
           reporter: github-pr-review
