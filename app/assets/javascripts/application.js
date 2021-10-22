@@ -3,6 +3,9 @@
 //= require bootstrap
 //= require_tree .
 
-jQuery(function() {
-  jQuery('#modalAlertAntifraud').modal('show');
+$(function() {
+  $('#modalAlertAntifraud').modal('show');
+  $('#modal-cookies button').on('click', function() {
+    $('#modal-cookies').hide();
+  });
 });
