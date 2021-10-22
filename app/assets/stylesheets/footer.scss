@@ -1,17 +1,50 @@
 @import "variables";
 
-#footer {
-  background-color: $primary-color;
-  color: white;
-  font-size: 14px;
+.newsletter-home {
+  padding: 20px 30px;
+  background-color: #1a5f7e;
+  text-align: center;
+
+  .text {
+    color: #fff;
+    font-size: 25px;
+  }
+}
+
+.footer-home {
+  padding: 40px 0;
+  background-color: #0d1426;
+  color: #cbced2;
+
+  h6 {
+    text-align: left;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    li {
+      position: relative;
+      display: block;
+
+      a {
+        color: #cbced2;
+        padding: 2px 0;
+        text-decoration: none;
+        text-transform: none;
+        font-size: 1em;
+      }
+    }
+  }
 
   .disclaimer {
     margin: 20px 0px 0px;
     text-align: center;
     font-size: 13px;
-  }
-
-  .nav-link {
-    color: inherit;
   }
 }

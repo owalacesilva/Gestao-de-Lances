@@ -7,7 +7,7 @@ set :application, "rails-rewards"
 set :deploy_to, "/home/ubuntu/#{fetch(:application)}"
 
 # Configuration Bitbucket Repository URL
-set :repo_url, "git@github.com:w2silva/rails-rewards.git"
+set :repo_url, "git@github.com:w2silva/rails-auctions.git"
 set :repo_path, "#{fetch(:deploy_to)}/repo"
 
 set :ssh_options, { forward_agent: true }
