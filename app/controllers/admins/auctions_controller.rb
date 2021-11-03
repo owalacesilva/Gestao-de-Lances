@@ -1,4 +1,6 @@
 class Admins::AuctionsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @resources = current_admin.auctions
   end

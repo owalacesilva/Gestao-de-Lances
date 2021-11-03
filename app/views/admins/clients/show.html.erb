@@ -7,6 +7,7 @@
     </div>
     <div class="menu">
       <ul class="menu-list">
+        <li><%= link_to 'Resultados', admins_dashboard_path, class: 'menu-link' %></li>
         <li><%= link_to 'Todos os Clientes', admins_clients_path, class: 'menu-link active' %></li>
         <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link' %></li>
         <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
@@ -19,9 +20,9 @@
     <div class="admin-header"></div>
     <div class="admin-content">
       <div class="container">
-        <div class="card">
+        <div class="card mb-3">
           <div class="card-body">
-            <h5 class="card-title mb-4">Cadastrar novo Leilão</h5>
+            <h5 class="card-title mb-4">Código do cliente: <%= @client.id %></h5>
             <%= form_for(@client, as: :client, url: admins_clients_path) do |f| %>
               <div class="row">
                 <div class="col-lg-6">
@@ -140,6 +141,18 @@
                 </div>
               </div>
             <%- end %>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Habilitações</h5>
+            <p class="text-center">Nenhuma habilitação encontrada</p>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Documentos</h5>
+            <p class="text-center">Nenhuma documento enviado</p>
           </div>
         </div>
       </div>

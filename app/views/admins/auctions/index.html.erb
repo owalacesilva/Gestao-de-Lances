@@ -7,6 +7,7 @@
     </div>
     <div class="menu">
       <ul class="menu-list">
+        <li><%= link_to 'Resultados', admins_dashboard_path, class: 'menu-link' %></li>
         <li><%= link_to 'Todos os Clientes', admins_clients_path, class: 'menu-link' %></li>
         <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link active' %></li>
         <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
@@ -38,17 +39,23 @@
                   <th scope="col">Categoria</th>
                   <th scope="col">Periodo</th>
                   <th scope="col">Registrado em</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
                 <% @resources.each do |resource| %>
                   <tr>
                     <th scope="row"><%= resource.id %></th>
-                    <td><%= resource.title %></td>
+                    <td><%= link_to resource.title, auction_page_path(resource.id), target: '_blank' %></td>
                     <td><%= resource.opening_bid %></td>
                     <td><%= resource.modality %></td>
                     <td><%= resource.start_date.to_date.strftime('%d/%m/%Y') %></td>
                     <td><%= resource.created_at.to_date.strftime('%d/%m/%Y') %></td>
+                    <td>
+                      <%= link_to 'Ver', auction_page_path(resource.id), target: '_blank' %>
+                      <%= link_to 'Editar', edit_admins_auction_path(resource.id) %>
+                      <%= link_to 'Imagens', edit_admins_auction_path(resource.id) %>
+                    </td>
                   </tr>
                 <%- end %>
               </tbody>

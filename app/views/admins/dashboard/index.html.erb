@@ -1,0 +1,25 @@
+<main class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="head d-flex justify-content-center align-items-center">
+      <a href="/" class="d-flex text-decoration-none">
+        <%= image_tag 'reward-logo.png', style: 'height: 70px;' %>
+      </a>
+    </div>
+    <div class="menu">
+      <ul class="menu-list">
+        <li><%= link_to 'Resultados', admins_dashboard_path, class: 'menu-link active' %></li>
+        <li><%= link_to 'Todos os Clientes', admins_clients_path, class: 'menu-link' %></li>
+        <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link' %></li>
+        <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Lista de Arremates', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Configurações', '#', class: 'menu-link' %></li>
+      </ul>
+    </div>
+  </aside>
+  <div class="admin-container">
+    <div class="admin-header"></div>
+    <div class="admin-content">
+      <div class="container"></div>
+    </div>
+  </div>
+</main>

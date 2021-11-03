@@ -1,4 +1,6 @@
 class Admins::ClientsController < ApplicationController
+  before_action :authenticate_admin!
+
   def index
     @clients = User.all
   end

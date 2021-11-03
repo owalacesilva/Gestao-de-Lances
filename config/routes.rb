@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :auction_page, path: :auction
 
   namespace :admins do
+    get '', controller: :dashboard, action: :index, as: :dashboard
     resources :auctions
     resources :clients
   end
