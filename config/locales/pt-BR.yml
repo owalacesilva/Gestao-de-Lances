@@ -27,6 +27,11 @@ pt-BR:
       messages:
         record_invalid: Informações invalidas
       models:
+        user:
+          attributes:
+            passord:
+              required: Nenhuma senha foi definido
+              blank: Campo senha está em branco
         auction:
           attributes:
             admin:
