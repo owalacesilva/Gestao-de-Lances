@@ -1,0 +1,56 @@
+<main class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="head d-flex justify-content-center align-items-center">
+      <a href="/" class="d-flex text-decoration-none">
+        <%= image_tag 'reward-logo.png', style: 'height: 70px;' %>
+      </a>
+    </div>
+    <div class="menu">
+      <ul class="menu-list">
+        <li><%= link_to 'Todos os Clientes', admins_clients_path, class: 'menu-link active' %></li>
+        <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link' %></li>
+        <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Lista de Arremates', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Configurações', '#', class: 'menu-link' %></li>
+      </ul>
+    </div>
+  </aside>
+  <div class="admin-container">
+    <div class="admin-header"></div>
+    <div class="admin-content">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Listagem de Clientes</h5>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">COD</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">CPF</th>
+                  <th scope="col">Telefone</th>
+                  <th scope="col">Endereço</th>
+                  <th scope="col">Cadastrado em</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @clients.each do |client| %>
+                  <tr>
+                    <th scope="row"><%= client.id %></th>
+                    <td><%= client.first_name %></td>
+                    <td><%= client.cpf_number %></td>
+                    <td><%= client.phone_number %></td>
+                    <td><%= client.street_address %></td>
+                    <td><%= client.created_at.to_date.strftime('%d/%m/%Y') %></td>
+                    <td><%= link_to 'Detalhes', admins_client_path(client.id) %></td>
+                  </tr>
+                <%- end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

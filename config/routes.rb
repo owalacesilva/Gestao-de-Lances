@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admins do
-    get 'auctions/index'
-    get 'auctions/show'
-    get 'auctions/new'
-    get 'auctions/create'
-    get 'auctions/edit'
-    get 'auctions/update'
-    get 'auctions/destroy'
-  end
   root 'home#index'
 
   devise_for :admins, controllers: {
@@ -31,5 +22,6 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :auctions
+    resources :clients
   end
 end

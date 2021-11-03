@@ -20,6 +20,7 @@ class Admins::AuctionsController < ApplicationController
   end
 
   def edit
+    @auction = current_admin.auctions.find(params[:id])
   end
 
   def update

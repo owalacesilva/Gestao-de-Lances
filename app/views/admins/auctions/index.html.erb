@@ -7,7 +7,7 @@
     </div>
     <div class="menu">
       <ul class="menu-list">
-        <li><%= link_to 'Todos os Clientes', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Todos os Clientes', admins_clients_path, class: 'menu-link' %></li>
         <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link active' %></li>
         <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
         <li><%= link_to 'Lista de Arremates', '#', class: 'menu-link' %></li>
@@ -47,8 +47,8 @@
                     <td><%= resource.title %></td>
                     <td><%= resource.opening_bid %></td>
                     <td><%= resource.modality %></td>
-                    <td><%= resource.start_date %></td>
-                    <td><%= resource.created_at %></td>
+                    <td><%= resource.start_date.to_date.strftime('%d/%m/%Y') %></td>
+                    <td><%= resource.created_at.to_date.strftime('%d/%m/%Y') %></td>
                   </tr>
                 <%- end %>
               </tbody>
