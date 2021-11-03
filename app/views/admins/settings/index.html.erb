@@ -13,47 +13,51 @@
     <div class="admin-header"></div>
     <div class="admin-content">
       <div class="container">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title mb-4">Cadastrar novo Leilão</h5>
-            <%= form_for(@resource, as: :auction, url: admins_auctions_path) do |f| %>
+        <%= form_for(@settings, as: :settings, url: admins_settings_path, method: :post) do |f| %>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Cadastrar novo Leilão</h5>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="mb-3">
-                    <%= f.label :title, class: "form-label" %>
-                    <%= f.text_field :title, autofocus: true, class: "form-control" %>
+                    <%= f.label :site_title, class: "form-label" %>
+                    <%= f.text_field :site_title, autofocus: true, class: "form-control" %>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="mb-3">
-                    <%= f.label :start_date, class: "form-label" %>
-                    <%= f.date_field :start_date, class: "form-control" %>
+                    <%= f.label :contact_email, class: "form-label" %>
+                    <%= f.text_field :contact_email, class: "form-control" %>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="mb-3">
-                    <%= f.label :end_date, class: "form-label" %>
-                    <%= f.date_field :end_date, class: "form-control" %>
+                    <%= f.label :whatsapp_number, class: "form-label" %>
+                    <%= f.text_field :whatsapp_number, class: "form-control" %>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="mb-3">
-                    <%= f.label :opening_bid, class: "form-label" %>
-                    <%= f.text_field :opening_bid, class: "form-control" %>
+                    <%= f.label :primary_contact_phone_number, class: "form-label" %>
+                    <%= f.text_field :primary_contact_phone_number, class: "form-control" %>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="mb-3">
-                    <%= f.label :modality, class: "form-label" %>
-                    <% @modality_fields = { 'online': 'Online', 'habilitado': 'Habilitado' } %>
-                    <%= f.select :modality, options_from_collection_for_select(@modality_fields, :first, :last, '2'), { include_blank: false, prompt: 'Selecione uma modalidade' }, { class: "form-control" } %>
+                    <%= f.label :secondary_contact_phone_number, class: "form-label" %>
+                    <%= f.text_field :secondary_contact_phone_number, class: "form-control" %>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Endereço comercial</h5>
               <div class="row">
                 <div class="col-lg-3">
                   <div class="mb-3">
@@ -100,21 +104,41 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>        
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-4">Redes sociais</h5>
               <div class="mb-3">
-                <%= f.label :description, class: "form-label" %>
-                <%= f.text_area :description, class: "form-control", rows: 5 %>
+                <%= f.label :facebook_url, class: "form-label" %>
+                <%= f.text_field :facebook_url, class: "form-control", rows: 5 %>
               </div>
               <div class="mb-3">
-                <%= f.label :important_notices, class: "form-label" %>
-                <%= f.text_area :important_notices, class: "form-control", rows: 5 %>
+                <%= f.label :twitter_url, class: "form-label" %>
+                <%= f.text_field :twitter_url, class: "form-control", rows: 5 %>
               </div>
-
-              <div class="mb-3 text-end">
-                <%= f.submit "Finalizar", class: "btn btn-primary" %>
+              <div class="mb-3">
+                <%= f.label :linkedin_url, class: "form-label" %>
+                <%= f.text_field :linkedin_url, class: "form-control", rows: 5 %>
               </div>
-            <% end %>
+              <div class="mb-3">
+                <%= f.label :youtube_url, class: "form-label" %>
+                <%= f.text_field :youtube_url, class: "form-control", rows: 5 %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :google_url, class: "form-label" %>
+                <%= f.text_field :google_url, class: "form-control", rows: 5 %>
+              </div>
+              <div class="mb-3">
+                <%= f.label :google_maps_url, class: "form-label" %>
+                <%= f.text_field :google_maps_url, class: "form-control", rows: 5 %>
+              </div>
+              <div class="text-end">
+                <%= f.submit "Atualizar", class: "btn btn-primary" %>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

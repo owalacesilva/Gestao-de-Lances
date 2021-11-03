@@ -28,16 +28,32 @@
         <h6>Contato</h6>
         <ul>
           <li><%= link_to 'Formulário de Contato', '#', class: 'btn btn-link' %></li>
-          <li><%= link_to 'Telefone: +55 (11) 3597-5794', '#', class: 'btn btn-link' %></li>
+          <li><%= link_to "Telefone: #{settings.primary_contact_phone_number}", '#', class: 'btn btn-link' %></li>
         </ul>
       </div>
       <div class="col-lg">
         <h6>Redes Sociais</h6>
         <ul class="text-left">
-          <li class="d-inline-block me-2"><%= fa_icon 'facebook-square 2x' %></li>
-          <li class="d-inline-block me-2"><%= fa_icon 'twitter-square 2x' %></li>
-          <li class="d-inline-block me-2"><%= fa_icon 'linkedin-square 2x' %></li>
-          <li class="d-inline-block"><%= fa_icon 'youtube-square 2x' %></li>
+          <li class="d-inline-block me-2">
+            <%= link_to settings.facebook_url do %>
+              <%= fa_icon 'facebook-square 2x' %>
+            <%- end %>
+          </li>
+          <li class="d-inline-block me-2">
+            <%= link_to settings.twitter_url do %>
+              <%= fa_icon 'twitter-square 2x' %>
+            <%- end %>
+          </li>
+          <li class="d-inline-block me-2">
+            <%= link_to settings.linkedin_url do %>
+              <%= fa_icon 'linkedin-square 2x' %>
+            <%- end %>
+          </li>
+          <li class="d-inline-block">
+            <%= link_to settings.youtube_url do %>
+              <%= fa_icon 'youtube-square 2x' %>
+            <%- end %>
+          </li>
         </ul>
       </div>
       <div class="col-lg">
@@ -66,7 +82,7 @@
       </div>
     </div>
     <div class="disclaimer border-top pt-3">
-      © <%= t('app_name') %> - Todos os direitos reservados. Proibido a reprodução total ou parcial do layout, seleção, organização e disposição do conteúdo audiovisual deste software nos termos da Lei n. º 9.609/98 e 9.610/98.
+      © <%= settings.site_title %> - Todos os direitos reservados. Proibido a reprodução total ou parcial do layout, seleção, organização e disposição do conteúdo audiovisual deste software nos termos da Lei n. º 9.609/98 e 9.610/98.
     </div>
   </div>
 </footer>

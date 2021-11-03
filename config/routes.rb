@@ -24,5 +24,8 @@ Rails.application.routes.draw do
     get '', controller: :dashboard, action: :index, as: :dashboard
     resources :auctions
     resources :clients
+    resources :settings do
+      post '', action: :update, on: :collection
+    end
   end
 end

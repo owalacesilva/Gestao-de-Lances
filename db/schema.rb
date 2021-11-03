@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_19_173631) do
+ActiveRecord::Schema.define(version: 2021_11_03_180858) do
 
   create_table "admins", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -69,6 +69,33 @@ ActiveRecord::Schema.define(version: 2021_10_19_173631) do
     t.index ["user_id"], name: "index_auctions_on_user_id"
   end
 
+  create_table "settings", charset: "utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "admin_id", null: false
+    t.string "site_title"
+    t.string "contact_email"
+    t.string "primary_contact_phone_number"
+    t.string "secondary_contact_phone_number"
+    t.string "whatsapp_number"
+    t.string "postal_code"
+    t.string "street_address"
+    t.string "street_number"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "facebook_url"
+    t.string "twitter_url"
+    t.string "linkedin_url"
+    t.string "youtube_url"
+    t.string "google_url"
+    t.string "google_maps_url"
+    t.index ["admin_id"], name: "index_settings_on_admin_id"
+  end
+
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -116,4 +143,5 @@ ActiveRecord::Schema.define(version: 2021_10_19_173631) do
 
   add_foreign_key "auctions", "admins", on_update: :cascade, on_delete: :cascade
   add_foreign_key "auctions", "users", on_update: :cascade
+  add_foreign_key "settings", "admins", on_update: :cascade, on_delete: :cascade
 end

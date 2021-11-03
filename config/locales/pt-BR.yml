@@ -48,6 +48,29 @@ pt-BR:
         city: Cidade
         state: Estado
         country: País
+        latitude: Latitude
+        longitude: Longitude
+      setting:
+        site_title: Título do site
+        contact_email: E-mail para contato
+        primary_contact_phone_number: Telefone
+        secondary_contact_phone_number: Segundo Telefone
+        whatsapp_number: WhastApp
+        facebook_url: URL Facebook
+        twitter_url: URL Twitter
+        linkedin_url: URL Linkedin
+        youtube_url: URL Youtube
+        google_url: URL Google
+        google_maps_url: URL Google Maps
+        postal_code: CEP
+        street_address: Endereço
+        street_number: Número
+        neighborhood: Bairro
+        city: Cidade
+        state: Estado
+        country: País
+        latitude: Latitude
+        longitude: Longitude
     errors:
       messages:
         record_invalid: "Erro ao salvar recurso: %{errors}"

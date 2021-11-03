@@ -29,6 +29,8 @@ class CreateAuctions < ActiveRecord::Migration[6.1]
       t.string :city
       t.string :state
       t.string :country
+      t.string :latitude
+      t.string :longitude
 
       # Tracking
       t.integer  :views_count, default: 0, null: false
