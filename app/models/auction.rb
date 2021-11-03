@@ -20,4 +20,8 @@ class Auction < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :opening_bid, presence: true
+
+  before_validation do
+    self.status = :created
+  end
 end

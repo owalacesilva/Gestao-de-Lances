@@ -9,8 +9,10 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  # Associations
+  has_many :auctions, class_name: 'Auction'
+
   # Validates
-  validates :status, presence: true
   validates :display_name, presence: true
   validates :email, presence: true
 end

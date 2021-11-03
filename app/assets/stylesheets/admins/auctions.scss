@@ -1,0 +1,73 @@
+// Place all the styles related to the admins/auctions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.admin-layout {
+  background-color: inherit;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .admin-sidebar {
+    position: absolute;
+    display: block;
+    width: 180px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #191818;
+    z-index: 9;
+
+    .head {
+      display: block;
+      width: 100%;
+      height: 100px;
+      margin-bottom: 30px;
+    }
+
+    .menu {
+
+      .menu-list {
+        display: block;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+
+        li {
+
+        }
+
+        .menu-link {
+          cursor: pointer;
+          position: relative;
+          display: block;
+          color: #999;
+          padding: 10px;
+          text-decoration: none;
+          line-height: 1.6;
+          font-size: 1.3em;
+
+          &:hover, 
+          &.active {
+            background: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .admin-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 180px;
+
+    .admin-content {
+      padding: 10px;
+    }
+  }
+}

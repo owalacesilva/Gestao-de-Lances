@@ -1,0 +1,61 @@
+<main class="admin-layout">
+  <aside class="admin-sidebar">
+    <div class="head d-flex justify-content-center align-items-center">
+      <a href="/" class="d-flex text-decoration-none">
+        <%= image_tag 'reward-logo.png', style: 'height: 70px;' %>
+      </a>
+    </div>
+    <div class="menu">
+      <ul class="menu-list">
+        <li><%= link_to 'Todos os Clientes', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link active' %></li>
+        <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Lista de Arremates', '#', class: 'menu-link' %></li>
+        <li><%= link_to 'Configurações', '#', class: 'menu-link' %></li>
+      </ul>
+    </div>
+  </aside>
+  <div class="admin-container">
+    <div class="admin-header"></div>
+    <div class="admin-content">
+      <div class="container">
+        <div class="card">
+          <div class="card-body">
+            <div class="row mb-4">
+              <div class="col">
+                <h5 class="card-title">Lista de Leilões</h5>
+              </div>
+              <div class="col text-end">
+                <%= link_to 'Novo leilão', new_admins_auction_path, class: 'btn btn-primary' %>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">COD</th>
+                  <th scope="col">Título</th>
+                  <th scope="col">Lance inicial</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Periodo</th>
+                  <th scope="col">Registrado em</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @resources.each do |resource| %>
+                  <tr>
+                    <th scope="row"><%= resource.id %></th>
+                    <td><%= resource.title %></td>
+                    <td><%= resource.opening_bid %></td>
+                    <td><%= resource.modality %></td>
+                    <td><%= resource.start_date %></td>
+                    <td><%= resource.created_at %></td>
+                  </tr>
+                <%- end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

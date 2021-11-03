@@ -1,11 +1,15 @@
 pt-BR:
   app_name: SZORTYKA Online
+  errors:
+    messages:
+      not_saved: Atenção, erros!
   activerecord: 
     models:
       user: Usuário
     attributes:
       user:
         first_name: Nome
+        status: Situação
         cpf_number: CPF
         rg_number: RG
         cnpj_number: CNPJ
@@ -23,12 +27,44 @@ pt-BR:
         country: País
         password: Senha
         password_confirmation: Digite novamente a senha
+      admin:
+        display_name: Nome
+        phone_number: Telefone
+        status: Situação
+        password: Senha
+        password_confirmation: Digite novamente a senha
+      auction:
+        title: Título
+        description: Descrição
+        important_notices: Informações Importantes
+        start_date: Data inicial
+        end_date: Data final
+        opening_bid: Lance inicial
+        modality: Modalidade
+        postal_code: CEP
+        street_address: Endereço
+        street_number: Número
+        neighborhood: Bairro
+        city: Cidade
+        state: Estado
+        country: País
     errors:
       messages:
-        record_invalid: Informações invalidas
+        record_invalid: "Erro ao salvar recurso: %{errors}"
       models:
         user:
           attributes:
+            passord:
+              required: Nenhuma senha foi definido
+              blank: Campo senha está em branco
+        admin:
+          attributes:
+            display_name:
+              required: Nenhum nome foi definido
+              blank: Campo nome está em branco
+            status:
+              required: Nenhum status foi definido
+              blank: Campo status está em branco
             passord:
               required: Nenhuma senha foi definido
               blank: Campo senha está em branco
@@ -37,4 +73,7 @@ pt-BR:
             admin:
               required: Nenhum admin foi definido
               blank: Campo admin está vazio
+            status:
+              required: Nenhum status foi definido
+              blank: Campo status está em branco
 
