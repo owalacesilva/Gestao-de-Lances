@@ -1,61 +1,46 @@
-<main class="admin-layout">
-  <aside class="admin-sidebar">
-    <div class="head d-flex justify-content-center align-items-center">
-      <a href="/" class="d-flex text-decoration-none">
-        <%= image_tag 'reward-logo.png', style: 'height: 70px;' %>
-      </a>
-    </div>
-    <div class="menu">
-      <%= render partial: 'partials/admins/menu-list' %>
-    </div>
-  </aside>
-  <div class="admin-container">
-    <div class="admin-header"></div>
-    <div class="admin-content">
-      <div class="container">
-        <div class="card">
-          <div class="card-body">
-            <div class="row mb-4">
-              <div class="col">
-                <h5 class="card-title">Lista de Leilões</h5>
-              </div>
-              <div class="col text-end">
-                <%= link_to 'Novo leilão', new_admins_auction_path, class: 'btn btn-primary' %>
-              </div>
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">COD</th>
-                  <th scope="col">Título</th>
-                  <th scope="col">Lance inicial</th>
-                  <th scope="col">Categoria</th>
-                  <th scope="col">Periodo</th>
-                  <th scope="col">Registrado em</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @resources.each do |resource| %>
-                  <tr>
-                    <th scope="row"><%= resource.id %></th>
-                    <td><%= link_to resource.title, auction_page_path(resource.id), target: '_blank' %></td>
-                    <td><%= resource.opening_bid %></td>
-                    <td><%= resource.modality %></td>
-                    <td><%= resource.start_date.to_date.strftime('%d/%m/%Y') %></td>
-                    <td><%= resource.created_at.to_date.strftime('%d/%m/%Y') %></td>
-                    <td>
-                      <%= link_to 'Ver', auction_page_path(resource.id), target: '_blank' %>
-                      <%= link_to 'Editar', edit_admins_auction_path(resource.id) %>
-                      <%= link_to 'Imagens', edit_admins_auction_path(resource.id) %>
-                    </td>
-                  </tr>
-                <%- end %>
-              </tbody>
-            </table>
+<%= render layout: 'admins/shared/painel', locals: { page: 'auctions_list' } do %>
+  <div class="container mt-3">
+    <div class="card">
+      <div class="card-body">
+        <div class="row mb-4">
+          <div class="col">
+            <h5 class="card-title">Lista de Leilões</h5>
+          </div>
+          <div class="col text-end">
+            <%= link_to 'Novo leilão', new_admins_auction_path, class: 'btn btn-primary' %>
           </div>
         </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">COD</th>
+              <th scope="col">Título</th>
+              <th scope="col">Lance inicial</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Periodo</th>
+              <th scope="col">Registrado em</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @resources.each do |resource| %>
+              <tr>
+                <th scope="row"><%= resource.id %></th>
+                <td><%= link_to resource.title, auction_page_path(resource.id), target: '_blank' %></td>
+                <td><%= resource.opening_bid %></td>
+                <td><%= resource.modality %></td>
+                <td><%= resource.start_date.to_date.strftime('%d/%m/%Y') %></td>
+                <td><%= resource.created_at.to_date.strftime('%d/%m/%Y') %></td>
+                <td>
+                  <%= link_to 'Ver', auction_page_path(resource.id), target: '_blank' %>
+                  <%= link_to 'Editar', edit_admins_auction_path(resource.id) %>
+                  <%= link_to 'Imagens', edit_admins_auction_path(resource.id) %>
+                </td>
+              </tr>
+            <%- end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-</main>
+<%- end %>

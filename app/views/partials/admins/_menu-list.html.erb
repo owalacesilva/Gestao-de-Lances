@@ -1,8 +1,38 @@
 <ul class="menu-list">
-  <li><%= link_to 'Resultados', admins_dashboard_path, class: 'menu-link' %></li>
-  <li><%= link_to 'Todos os Clientes', admins_clients_path, class: 'menu-link' %></li>
-  <li><%= link_to 'Lista de Leilões', admins_auctions_path, class: 'menu-link' %></li>
-  <li><%= link_to 'Ver Lances', '#', class: 'menu-link' %></li>
-  <li><%= link_to 'Lista de Arremates', '#', class: 'menu-link' %></li>
-  <li><%= link_to 'Configurações', admins_settings_path, class: 'menu-link' %></li>
+  <li>
+    <%= link_to admins_dashboard_path, class: "menu-link #{current_page == 'results' ? 'active' : ''}" do %>
+      <%= fa_icon "bar-chart fw" %>
+      <span class="text">Resultados</span>
+    <%- end %>
+  </li>
+  <li>
+    <%= link_to admins_clients_path, class: "menu-link #{current_page == 'clients_list' ? 'active' : ''}" do %>
+      <%= fa_icon "address-book fw" %>
+      <span class="text">Todos os Clientes</span>
+    <%- end %>
+  </li>
+  <li>
+    <%= link_to admins_auctions_path, class: "menu-link #{current_page == 'auctions_list' ? 'active' : ''}" do %>
+      <%= fa_icon "gavel fw" %>
+      <span class="text">Lista de Leilões</span>
+    <%- end %>
+  </li>
+  <li>
+    <%= link_to '#', class: "menu-link #{current_page == '' ? 'active' : ''}" do %>
+      <%= fa_icon "list fw" %>
+      <span class="text">Ver Lances</span>
+    <%- end %>
+  </li>
+  <li>
+    <%= link_to '#', class: "menu-link #{current_page == '' ? 'active' : ''}" do %>
+      <%= fa_icon "trophy fw" %>
+      <span class="text">Lista de Arremates</span>
+    <%- end %>
+  </li>
+  <li>
+    <%= link_to admins_settings_path, class: "menu-link #{current_page == 'settings' ? 'active' : ''}" do %>
+      <%= fa_icon "cogs fw" %>
+      <span class="text">Configurações</span>
+    <%- end %>
+  </li>
 </ul>
