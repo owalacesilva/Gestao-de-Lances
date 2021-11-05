@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,6 +15,7 @@
  *= require header
  *= require footer
  *= require home
+ *= require blueimp-gallery.min
  *= require admins/auctions
  *= require_self
  */

@@ -34,7 +34,7 @@
                 <td>
                   <%= link_to 'Ver', auction_page_path(resource.id), target: '_blank' %>
                   <%= link_to 'Editar', edit_admins_auction_path(resource.id) %>
-                  <%= link_to 'Imagens', edit_admins_auction_path(resource.id) %>
+                  <%= link_to 'Imagens', admins_auction_auction_pictures_path(auction_id: resource.id) %>
                 </td>
               </tr>
             <%- end %>

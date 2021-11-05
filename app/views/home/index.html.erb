@@ -63,7 +63,11 @@
           <div class="col-lg-4">
             <div class="card mb-5">
               <%= link_to auction_page_path(auction.id) do %>
-                <%= image_tag "car-test.jpg", class: "card-img-top" %>
+                <% if auction.pictures.attached? %>
+                  <%= image_tag rails_storage_proxy_url(auction.pictures[0]), class: "card-img-top" %>
+                <% else %>
+                  <%= image_tag "car-test.jpg", class: "card-img-top" %>
+                <% end %>
               <%- end %>
               <div class="card-body">
                 <div class="date py-2 text-center">

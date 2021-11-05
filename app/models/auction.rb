@@ -21,6 +21,9 @@ class Auction < ApplicationRecord
   validates :end_date, presence: true
   validates :opening_bid, presence: true
 
+  has_one_attached :featured_picture
+  has_many_attached :pictures
+
   before_validation do
     self.status = :created
   end

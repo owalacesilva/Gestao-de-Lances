@@ -13,9 +13,9 @@ class Admins::AuctionsController < ApplicationController
   end
 
   def create
-    @resource = current_admin.auctions.new(auction_params)
-    if @resource.save!
-      redirect_to admins_auctions_url
+    @auction = current_admin.auctions.new(auction_params)
+    if @auction.save!
+      redirect_to admins_auction_auction_pictures_path(auction_id: @auction.id)
     else
       render :new
     end
