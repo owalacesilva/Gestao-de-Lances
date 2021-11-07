@@ -3,7 +3,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title mb-4">Editar Leilão</h5>
-        <%= form_for(@auction, as: :auction, url: edit_admins_auction_path(@auction.id)) do |f| %>
+        <%= form_for(@auction, as: :auction, url: admins_auction_path(@auction.id)) do |f| %>
           <div class="row">
             <div class="col-lg-6">
               <div class="mb-3">

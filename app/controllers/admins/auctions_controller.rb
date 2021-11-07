@@ -26,6 +26,13 @@ class Admins::AuctionsController < ApplicationController
   end
 
   def update
+    auction = current_admin.auctions.find(params[:id])
+    auction.update(auction_params)
+    if auction.save!
+      redirect_to admins_auction_auction_pictures_path(auction_id: auction.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
