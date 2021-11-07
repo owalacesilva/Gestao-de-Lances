@@ -8,7 +8,7 @@ class Admins::AuctionPicturesController < ApplicationController
       files = @auction.pictures.map.with_index do |picture, index| 
         {
           deleteType: "DELETE",
-          deleteUrl: admins_auction_auction_picture_url(id: index + 1, auction_id: @auction.id),
+          deleteUrl: admins_auction_auction_picture_url(id: picture.signed_id, auction_id: @auction.id),
           name: "Visualizar foto",
           size: 0,
           thumbnailUrl: url_for(picture),
@@ -33,7 +33,7 @@ class Admins::AuctionPicturesController < ApplicationController
       files = auction.pictures.map.with_index do |picture, index| 
         {
           deleteType: "DELETE",
-          deleteUrl: admins_auction_auction_picture_url(id: index + 1, auction_id: auction.id),
+          deleteUrl: admins_auction_auction_picture_url(id: picture.signed_id, auction_id: auction.id),
           name: "Visualizar foto",
           size: 0,
           thumbnailUrl: url_for(picture),
@@ -49,5 +49,8 @@ class Admins::AuctionPicturesController < ApplicationController
   end
 
   def destroy
+    picture = ActiveStorage::Blob.find_signed(params[:id])
+    picture.attachments.first.purge
+    render json: { success: true }
   end
 end
